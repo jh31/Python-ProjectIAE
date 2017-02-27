@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 
+#Creating of the class Bond
 class Bond(object):
     def __init__(self, rate, price, amount, maturity):
         self.rate = rate
@@ -7,24 +8,25 @@ class Bond(object):
         self.amount = amount
         self.maturity = maturity
 
-    def description(self):
-        print(self.rate)
-        print(self.amount)
-        print(self.maturity)
-        print(self.price)
-
+    #Definition of the method to compute the price
     def simulation(self):
+        #Create a new empty list
         list_prices = []
+        #Calculate the price of the bond for 100 years
         for i in range(2, 102):
             self.price = self.amount / ((1 + self.rate) ** i)
-            # self.amount+= 564
-
+            #Add a new price in the list
             list_prices.append(self.price)
-
-            #print(self.price)
         print(list_prices)
+        #Graph
+        x = range(2, 102)
+        y = list_prices
+        plt.plot(x, y)
+        plt.xlabel("Years")
+        plt.ylabel("Price of the bond")
+        plt.show()
 
-
+#Creation of two types of bonds
 short_term = Bond(0.01, "", 1000, 2)
 short_term.simulation()
 long_term = Bond(0.03, "", 3000, 5)
