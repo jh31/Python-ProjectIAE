@@ -13,22 +13,36 @@ class Bond(object):
         #Create a new empty list
         list_prices = []
         #Calculate the price of the bond for 100 years
-        for i in range(2, 102):
-            self.price = self.amount / ((1 + self.rate) ** i)
-            #Add a new price in the list
-            list_prices.append(self.price)
-        print(list_prices)
-        #Graph
-        x = range(2, 102)
-        y = list_prices
-        plt.plot(x, y)
-        plt.xlabel("Years")
-        plt.ylabel("Price of the bond")
-        plt.show()
+        if self.maturity == 2:
+           for i in range(2, 102):
+               self.price = self.amount / ((1 + self.rate) ** i)
+               #Add a new price in the list
+               list_prices.append(self.price)
+           print(list_prices)
+           #Graph
+           x = range(2, 102)
+           y = list_prices
+           plt.plot(x, y)
+           plt.xlabel("Years")
+           plt.ylabel("Price of the bond")
+           plt.show()
+        else:
+            for i in range(5, 105):
+                self.price = self.amount / ((1 + self.rate) ** i)
+                # Add a new price in the list
+                list_prices.append(self.price)
+            print(list_prices)
+            x = range(2, 102)
+            y = list_prices
+            plt.plot(x, y)
+            plt.xlabel("Years")
+            plt.ylabel("Price of the bond")
+            plt.show()
+
 
 #Creation of two types of bonds
 short_term = Bond(0.01, "", 1000, 2)
 short_term.simulation()
 long_term = Bond(0.03, "", 3000, 5)
-#long_term.simulation()
+long_term.simulation()
 
