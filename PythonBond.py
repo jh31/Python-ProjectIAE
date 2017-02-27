@@ -44,5 +44,5 @@ class Bond(object):
 short_term = Bond(0.01, "", 1000, 2)
 short_term.simulation()
 long_term = Bond(0.03, "", 3000, 5)
-long_term.simulation()
+'long_term.simulation()
 
