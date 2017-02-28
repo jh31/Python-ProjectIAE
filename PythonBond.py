@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-#Creating of the class Bond
+#Creation of the class Bond
 class Bond(object):
     def __init__(self, rate, price, amount, maturity):
         self.rate = rate
@@ -19,7 +19,7 @@ class Bond(object):
                #Add a new price in the list
                list_prices.append(self.price)
            print(list_prices)
-           #Graph
+           #Plot the Graph
            x = range(2, 102)
            y = list_prices
            plt.plot(x, y)
