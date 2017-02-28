@@ -23,6 +23,7 @@ class Bond(object):
            x = range(2, 102)
            y = list_prices
            plt.plot(x, y)
+           plt.title("Short term bond price evolution")
            plt.xlabel("Years")
            plt.ylabel("Price of the bond")
            plt.show()
@@ -35,6 +36,7 @@ class Bond(object):
             x = range(2, 102)
             y = list_prices
             plt.plot(x, y)
+            plt.title("Long term bond price evolution")
             plt.xlabel("Years")
             plt.ylabel("Price of the bond")
             plt.show()
