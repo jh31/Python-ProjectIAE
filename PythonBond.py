@@ -33,6 +33,7 @@ class Bond(object):
                 # Add a new price in the list
                 list_prices.append(self.price)
             print(list_prices)
+            #Plot the graph
             x = range(2, 102)
             y = list_prices
             plt.plot(x, y)
